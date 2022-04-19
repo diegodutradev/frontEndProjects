@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+body{
+    background-image: linear-gradient(to right, #F8C493,#FBDC9B);
+    max-width: 600px;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px rgba(128, 128, 128, 0.616);
+    padding: 10px;
+}
+h1{
+    text-align: center;
+    color: #AE728A;
+    text-shadow: 2px 2px 1px #6b4655c7;
+}
+
+h2{
+    color: #FBBCCF;
+}
+
+p{
+    text-align: justify;
+}
+
+.perfil{
+    display: block;
+    margin: auto;
+    border: 1px solid #00000073;
+}
+
+a:hover {
+    color: crimson;
+}
+
+div > p {
+    display: none;
+}
+div:hover > p {
+    display: block;
+    opacity: 30%;
+}
