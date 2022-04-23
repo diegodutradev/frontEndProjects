@@ -41,14 +41,13 @@ header a:hover{
 main{
     font-family: 'Ubuntu', sans-serif;
     padding-left: 20px;
-    text-align: justify;
-    font-size: 4vh;
+    font-size: 3vh;
     
 }
 
 section > p{
     padding-bottom: 2em;
-    line-height: 7vh;
+    line-height: 5vh;
     padding-right: 2em;
     }
 
