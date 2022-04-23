@@ -53,6 +53,9 @@
      section > p{
          padding-bottom: 2em;
      }
+     section.imagem{
+         background-position: center center;
+     }
 
      section.imagem > p{
          display: inline-block;
