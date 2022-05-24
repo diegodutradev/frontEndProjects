@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalha Pokemon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        main{
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 20px;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.429);
+        }
+        h1{
+            font-size: 20px;
+            font-family: cursive;
+        }
+        p{
+            font-size: 15px;
+            font-family: 'Press Start 2P', cursive;
+
+        }
+        img{
+            width: 70px;
+            height: 70px;
+            
+        }
+        section{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Voce escolheu o Mudkip, portanto irá batalhar contra o Treecko</h1>
+        <section>
+            <img src="mudkip.jpg" alt="">
+            <img src="treecko.jpg" alt="">
+        </section>
+        <p>Oque voce deseja fazer?</p>
+        <button id="atacar" onclick="at()">Atacar</button>
+        <button id="curar" onclick="heal()">Curar</button>
+        <p id="status"></p>
+        <p id="vida"></p>
+    </main>
+    <script>
+        var jogador=50
+          var enemy=40
+      function at(){
+          enemy=enemy-3
+          jogador=jogador-4
+          document.getElementById('status').innerHTML='Mudkip causou 3 de dano.<br>Treecko causou 4 de dano.'
+          document.getElementById('vida').innerHTML='Mudkip: '+jogador + '<br>' + 'Treecko: '+enemy
+      }
+      function heal(){
+          jogador=jogador+20
+          jogador=jogador-3
+          document.getElementById('status').innerHTML='Voce usou uma poçao, Mudkip recupera 20 de vida.<br>Treecko causou 3 de dano.'
+          document.getElementById('vida').innerHTML='Mudkip: '+jogador + '<br>' + 'Treecko: '+enemy
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalha Pokemon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        main{
+            display: inline-block;
+            position: relative;
+            border: 1px solid black;
+            border-radius: 20px;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.429);
+        }
+        p{
+            font-size: 15px;
+            font-family: 'Press Start 2P', cursive;
+
+        }
+        h1{
+            font-size: 20px;
+            font-family: cursive;
+        }
+        img{
+            width: 120px;
+            height: 120px;
+            
+        }
+        section{
+            display: flex;
+            justify-content: center;
+        }
+        #sim{
+            display: none;
+            margin: auto;
+        }
+        #nao{
+            display: none;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Qual pokemon voce deseja para sua batalha?</h1>
+    <section>
+        <img src="torchc.jpg" alt="" id="torchic" class="inicial">
+        <img src="mudkip.jpg" alt="" id="mudkip" class="inicial">
+        <img src="treecko.jpg" alt="" id="treecko" class="inicial">
+    </section>
+    <p id="mudar"></p>
+    <button id="sim">Sim</button>
+    <button id="nao">Nao</button>
+</main>
+    <script>
+    
+    function statsTorchic(){
+            var kk=document.getElementById('mudar')
+            kk.innerHTML='Voce escholheu o Torchic, ele possui 50 de ataque e 35 de vida.<br>Deseja continuar?'
+            document.getElementById('sim').style.display='inline-block'
+            document.getElementById('nao').style.display='inline-block'
+            document.getElementById("sim").onclick = function () {
+        location.href = "pokemonBattle2.html"
+        }
+        }
+    function statsMudkip(){
+        var kk=document.getElementById('mudar')
+        kk.innerHTML='Voce escholheu o Mudkip, ele possui 35 de ataque e 50 de vida.<br>Deseja continuar?'
+        document.getElementById('sim').style.display='inline-block'
+        document.getElementById('nao').style.display='inline-block'
+        document.getElementById("sim").onclick = function () {
+        location.href = "pokemonBattle3.html"
+        }
+    }
+    function statsTreecko(){
+        var kk=document.getElementById('mudar')
+        kk.innerHTML='Voce escholheu o Treecko, ele possui 40 de ataque e 40 de vida.<br>Deseja continuar?'
+        document.getElementById('sim').style.display='inline-block'
+        document.getElementById('nao').style.display='inline-block'
+        document.getElementById("sim").onclick = function () {
+        location.href = "pokemonBattle4.html"
+        }
+        }
+        
+        document.getElementById('torchic').addEventListener('click',statsTorchic)
+        document.getElementById('treecko').addEventListener('click',statsTreecko)
+        document.getElementById('mudkip').addEventListener('click',statsMudkip)
+    </script>
+</body>
+</html>

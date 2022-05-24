@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalha Pokemon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        main{
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 20px;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.429);
+
+        }
+        h1{
+            font-size: 20px;
+            font-family: cursive;
+        }
+        p{
+            font-size: 15px;
+            font-family: 'Press Start 2P', cursive;
+
+        }
+        img{
+            width: 70px;
+            height: 70px;
+            
+        }
+        section{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Voce escolheu o Treecko, portanto irá batalhar contra o Torchic</h1>
+        <section>
+            <img src="treecko.jpg" alt="">
+            <img src="torchc.jpg" alt="">
+        </section>
+        <p>Oque voce deseja fazer?</p>
+        <button id="atacar" onclick="at()">Atacar</button>
+        <button id="curar" onclick="heal()">Curar</button>
+        <p id="status"></p>
+        <p id="vida"></p>
+    </main>
+    <script>
+        var jogador=40
+          var enemy=35
+      function at(){
+          enemy=enemy-4
+          jogador=jogador-5
+          document.getElementById('status').innerHTML='Treecko causou 4 de dano.<br>Torchic causou 5 de dano.'
+          document.getElementById('vida').innerHTML='Treecko: '+jogador + '<br>' + 'Torchic: '+enemy
+      }
+      function heal(){
+          jogador=jogador+20
+          jogador=jogador-5
+          document.getElementById('status').innerHTML='Voce usou uma poçao, Treecko recupera 20 de vida.<br>Torchic causou 5 de dano.'
+          document.getElementById('vida').innerHTML='Treecko: '+jogador + '<br>' + 'Torchic: '+enemy
+      }
+      </script>
+</body>
+</html>
