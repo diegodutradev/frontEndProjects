@@ -23,12 +23,11 @@
         }
         p{
             font-size: 15px;
-            font-family: 'Press Start 2P', cursive;
 
         }
         img{
-            width: 70px;
-            height: 70px;
+            width: 100px;
+            height: 100px;
             
         }
         section{
@@ -48,6 +47,7 @@
         <p>Oque voce deseja fazer?</p>
         <button id="atacar" onclick="at()">Atacar</button>
         <button id="curar" onclick="heal()">Curar</button>
+        <button id="voltar">Voltar</button>
         <p id="status"></p>
         <p id="vida"></p>
     </main>
@@ -66,7 +66,7 @@
           document.getElementById('status').innerHTML='Voce usou uma poçao, Torchic recupera 20 de vida.<br>Mudkip causou 3 de dano.'
           document.getElementById('vida').innerHTML='Torchic: '+jogador + '<br>' + 'Mudkip: '+enemy
       }
-
+      document.getElementById("voltar").onclick = function () {location.href = "pokemonBattle.html"}
   
   </script>
     
