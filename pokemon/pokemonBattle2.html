@@ -59,24 +59,42 @@
           jogador=jogador-3
           document.getElementById('status').innerHTML='Torchic causou 5 de dano.<br>Mudkip causou 3 de dano.'
           document.getElementById('vida').innerHTML='Torchic: '+jogador + '<br>' + 'Mudkip: '+enemy
+          if(jogador<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você perdeu, clique em voltar para tentar novamente"
+        document.getElementById("vida").innerHTML='Torchic: 0' + '<br>' + 'Mudkip: '+ enemy
+
+      } else if(enemy<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você venceu, clique em voltar para jogar novamente"
+        document.getElementById("vida").innerHTML='Torchic: '+jogador + '<br>' + 'Mudkip: 0'
+
+      }
       }
       function heal(){
           jogador=jogador+20
           jogador=jogador-3
           document.getElementById('status').innerHTML='Voce usou uma poçao, Torchic recupera 20 de vida.<br>Mudkip causou 3 de dano.'
           document.getElementById('vida').innerHTML='Torchic: '+jogador + '<br>' + 'Mudkip: '+enemy
-      }
-      document.getElementById("voltar").onclick = function () {location.href = "pokemonBattle.html"}
-
-      if(jogador<=0){
+          if(jogador<=0){
         document.getElementById("atacar").style.display="none"
         document.getElementById("curar").style.display="none"
         document.getElementById("status").innerHTML="Você perdeu, clique em voltar para tentar novamente"
+        document.getElementById("vida").innerHTML='Torchic: 0' + '<br>' + 'Mudkip: '+ enemy
+
       } else if(enemy<=0){
         document.getElementById("atacar").style.display="none"
         document.getElementById("curar").style.display="none"
         document.getElementById("status").innerHTML="Você venceu, clique em voltar para jogar novamente"
+        document.getElementById("vida").innerHTML='Torchic: '+jogador + '<br>' + 'Mudkip: 0'
+
       }
+      }
+      document.getElementById("voltar").onclick = function () {location.href = "pokemonBattle.html"}
+
+     
   
   </script>
     

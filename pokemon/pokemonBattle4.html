@@ -58,12 +58,37 @@
           jogador=jogador-5
           document.getElementById('status').innerHTML='Treecko causou 4 de dano.<br>Torchic causou 5 de dano.'
           document.getElementById('vida').innerHTML='Treecko: '+jogador + '<br>' + 'Torchic: '+enemy
+          if(jogador<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você perdeu, clique em voltar para tentar novamente"
+        document.getElementById("vida").innerHTML='Treecko: 0' + '<br>' + 'Torchic: '+ enemy
+
+      } else if(enemy<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você venceu, clique em voltar para jogar novamente"
+        document.getElementById("vida").innerHTML='Treecko: '+jogador + '<br>' + 'Torchic: 0'
+
+      }
       }
       function heal(){
           jogador=jogador+20
           jogador=jogador-5
           document.getElementById('status').innerHTML='Voce usou uma poçao, Treecko recupera 20 de vida.<br>Torchic causou 5 de dano.'
           document.getElementById('vida').innerHTML='Treecko: '+jogador + '<br>' + 'Torchic: '+enemy
+          if(jogador<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você perdeu, clique em voltar para tentar novamente"
+        document.getElementById("vida").innerHTML='Treecko: 0' + '<br>' + 'Torchic: '+ enemy
+
+      } else if(enemy<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você venceu, clique em voltar para jogar novamente"
+        document.getElementById("vida").innerHTML='Treecko: '+jogador + '<br>' + 'Torchic: 0'
+      }
       }
       document.getElementById("voltar").onclick = function () {location.href = "pokemonBattle.html"}
       </script>

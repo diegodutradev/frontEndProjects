@@ -56,12 +56,38 @@
           jogador=jogador-4
           document.getElementById('status').innerHTML='Mudkip causou 3 de dano.<br>Treecko causou 4 de dano.'
           document.getElementById('vida').innerHTML='Mudkip: '+jogador + '<br>' + 'Treecko: '+enemy
+          if(jogador<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você perdeu, clique em voltar para tentar novamente"
+        document.getElementById("vida").innerHTML='Mudkip: 0' + '<br>' + 'Treecko: '+ enemy
+
+      } else if(enemy<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você venceu, clique em voltar para jogar novamente"
+        document.getElementById("vida").innerHTML='Mudkip: '+jogador + '<br>' + 'Treecko: 0'
+
+      }
       }
       function heal(){
           jogador=jogador+20
           jogador=jogador-3
           document.getElementById('status').innerHTML='Voce usou uma poçao, Mudkip recupera 20 de vida.<br>Treecko causou 3 de dano.'
           document.getElementById('vida').innerHTML='Mudkip: '+jogador + '<br>' + 'Treecko: '+enemy
+          if(jogador<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você perdeu, clique em voltar para tentar novamente"
+        document.getElementById("vida").innerHTML='Mudkip: 0' + '<br>' + 'Treecko: '+ enemy
+
+      } else if(enemy<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você venceu, clique em voltar para jogar novamente"
+        document.getElementById("vida").innerHTML='Mudkip: '+jogador + '<br>' + 'Treecko: 0'
+
+      }
       }
       document.getElementById("voltar").onclick = function () {location.href = "pokemonBattle.html"}
     </script>
