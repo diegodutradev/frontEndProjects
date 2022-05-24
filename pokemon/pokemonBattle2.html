@@ -67,6 +67,16 @@
           document.getElementById('vida').innerHTML='Torchic: '+jogador + '<br>' + 'Mudkip: '+enemy
       }
       document.getElementById("voltar").onclick = function () {location.href = "pokemonBattle.html"}
+
+      if(jogador<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você perdeu, clique em voltar para tentar novamente"
+      } else if(enemy<=0){
+        document.getElementById("atacar").style.display="none"
+        document.getElementById("curar").style.display="none"
+        document.getElementById("status").innerHTML="Você venceu, clique em voltar para jogar novamente"
+      }
   
   </script>
     
