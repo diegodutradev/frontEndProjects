@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batalha Pokemon</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         body{
@@ -18,12 +19,12 @@
             border-radius: 20px;
             text-align: center;
             padding: 10px;
-            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.429);position: absolute;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.429);
+            position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
             background-color: white;
-
 
         }
         h1{
@@ -47,60 +48,70 @@
 </head>
 <body>
     <main>
-        <h1>Voce escolheu o Treecko, portanto irá batalhar contra o Torchic</h1>
+        <h1>Voce escolheu o Mudkip, portanto irá batalhar contra o Treecko</h1>
         <section>
+            <img src="mudkip.jpg" alt="">
             <img src="treecko.jpg" alt="">
-            <img src="torchc.jpg" alt="">
         </section>
         <p>Oque voce deseja fazer?</p>
         <button id="atacar" onclick="at()">Atacar</button>
         <button id="curar" onclick="heal()">Curar</button>
         <button id="voltar">Voltar</button>
-
         <p id="status"></p>
         <p id="vida"></p>
     </main>
     <script>
-        var jogador=40
-          var enemy=35
+        var jogador=50
+          var enemy=40
       function at(){
-          enemy=enemy-4
-          jogador=jogador-5
-          document.getElementById('status').innerHTML='Treecko causou 4 de dano.<br>Torchic causou 5 de dano.'
-          document.getElementById('vida').innerHTML='Treecko: '+jogador + '<br>' + 'Torchic: '+enemy
+          enemy=enemy-3
+          jogador=jogador-4
+          document.getElementById('status').innerHTML='Mudkip causou 3 de dano.<br>Treecko causou 4 de dano.'
+          document.getElementById('vida').innerHTML='Mudkip: '+jogador + '<br>' + 'Treecko: '+enemy
           if(jogador<=0){
         document.getElementById("atacar").style.display="none"
         document.getElementById("curar").style.display="none"
         document.getElementById("status").innerHTML="Você perdeu, clique em voltar para tentar novamente"
-        document.getElementById("vida").innerHTML='Treecko: 0' + '<br>' + 'Torchic: '+ enemy
+        document.getElementById("vida").innerHTML='Mudkip: 0' + '<br>' + 'Treecko: '+ enemy
 
       } else if(enemy<=0){
         document.getElementById("atacar").style.display="none"
         document.getElementById("curar").style.display="none"
         document.getElementById("status").innerHTML="Você venceu, clique em voltar para jogar novamente"
-        document.getElementById("vida").innerHTML='Treecko: '+jogador + '<br>' + 'Torchic: 0'
+        document.getElementById("vida").innerHTML='Mudkip: '+jogador + '<br>' + 'Treecko: 0'
 
       }
       }
       function heal(){
-          jogador=jogador+20
-          jogador=jogador-5
-          document.getElementById('status').innerHTML='Voce usou uma poçao, Treecko recupera 20 de vida.<br>Torchic causou 5 de dano.'
-          document.getElementById('vida').innerHTML='Treecko: '+jogador + '<br>' + 'Torchic: '+enemy
-          if(jogador<=0){
+        if ((jogador+20)>=50) {
+              document.getElementById('status').innerHTML='Voce usou uma poçao, Mudkip recupera ' + (50-jogador) + ' de vida.<br>Trecko causou 4 de dano.'
+              jogador=50
+              jogador=jogador-4
+              document.getElementById('vida').innerHTML='Mudkip: '+jogador + '<br>' + 'Treecko: '+enemy}
+
+            else if(jogador<=0){
         document.getElementById("atacar").style.display="none"
         document.getElementById("curar").style.display="none"
         document.getElementById("status").innerHTML="Você perdeu, clique em voltar para tentar novamente"
-        document.getElementById("vida").innerHTML='Treecko: 0' + '<br>' + 'Torchic: '+ enemy
+        document.getElementById("vida").innerHTML='Mudkip: 0' + '<br>' + 'Treecko: '+ enemy
 
       } else if(enemy<=0){
         document.getElementById("atacar").style.display="none"
         document.getElementById("curar").style.display="none"
         document.getElementById("status").innerHTML="Você venceu, clique em voltar para jogar novamente"
-        document.getElementById("vida").innerHTML='Treecko: '+jogador + '<br>' + 'Torchic: 0'
+        document.getElementById("vida").innerHTML='Mudkip: '+jogador + '<br>' + 'Treecko: 0'
+
       }
+              else{
+                jogador=jogador+20
+          jogador=jogador-3
+          document.getElementById('status').innerHTML='Voce usou uma poçao, Mudkip recupera 20 de vida.<br>Treecko causou 4 de dano.'
+          document.getElementById('vida').innerHTML='Mudkip: '+jogador + '<br>' + 'Treecko: '+enemy
+              }
+          
+         
       }
-      document.getElementById("voltar").onclick = function () {location.href = "pokemonBattle.html"}
-      </script>
+      document.getElementById("voltar").onclick = function () {location.href = "index.html"}
+    </script>
 </body>
 </html>
