@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="shortcut icon" href="jogo-da-velha.ico" type="image/x-icon">
+
+<style>
+         body{
+            background-image: url(back.png);
+            background-size: 100% 100%;
+            height: 97vh;
+        }
+
+        main{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px solid black;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.426);
+            background-color: white;
+        }
+        #quem{
+            padding-bottom: 15px;
+        }
+
+        #dvmenu{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        #tudo{
+            width: 160px;
+            height: 160px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            margin: auto;
+            
+        }
+        .posjogo{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            margin: 0px;
+            padding: 0px;
+            cursor: pointer;
+            justify-content: center;
+            align-content: center;
+            font-size: 40px;
+        }
+        #q1{
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+        }
+        #q2{
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }#q3{
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+        }#q4{
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+        }#q5{
+            border: 1px solid black;
+        }#q6{
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+            border-top: 1px solid black;
+        }#q7{
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+        }#q8{
+            border-left: 1px solid black;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+        }#q9{
+            border-left: 1px solid black;
+            border-top: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="dvmenu">Quem começa:</div>
+        <div id="quem">
+            <button onclick="inicia()">Iniciar Jogo</button>
+        </div>
+        <div id="tudo">
+            <div id="q1" class="posjogo" onclick="jogar(1)"></div>
+            <div id="q2" class="posjogo" onclick="jogar(2)"></div>
+            <div id="q3" class="posjogo" onclick="jogar(3)"></div>
+            <div id="q4" class="posjogo" onclick="jogar(4)"></div>
+            <div id="q5" class="posjogo" onclick="jogar(5)"></div>
+            <div id="q6" class="posjogo" onclick="jogar(6)"></div>
+            <div id="q7" class="posjogo" onclick="jogar(7)"></div>
+            <div id="q8" class="posjogo" onclick="jogar(8)"></div>
+            <div id="q9" class="posjogo" onclick="jogar(9)"></div>
+        </div>
+    </main>
+    <script>
+        var jogo=[]
+        var tabuleiro=[]
+        var quemJoga=0
+        var verifica
+        var jogando=true
+        var nivel=2
+        var jogadaCpu=1
+        var quemComeca=1
+
+        function verificaVitoria(){
+            var linha
+            var coluna
+            for(linha=0;linha<3;linha++){
+                if((jogo[linha][0]==jogo[linha][1])&&(jogo[linha][1]==jogo[linha][2]))
+                return jogo[linha][0]
+            } 
+            for(coluna=0;coluna<3;coluna++)
+                if((jogo[0][coluna]==jogo[1][coluna])&&(jogo[1][coluna]==jogo[2][coluna]))
+                return jogo[0][coluna]
+
+            if ((jogo[0][0]==jogo[1][1])&&(jogo[1][1]==jogo[2][2])){
+                return jogo[0][0]
+            }
+            if((jogo[0][2]==jogo[1][1])&&(jogo[1][1]==jogo[2][0])){
+                return jogo[0][2]
+            }
+            return ""
+        }
+            
+
+        function cpuJoga(){
+            if(jogando){
+                var l
+                var c
+                if (nivel==1){
+                    do{
+                    l=Math.round(Math.random()*2)
+                    c=Math.round(Math.random()*2)}
+                    while(jogo[l][c]!="")
+                    jogo[l][c]="O"
+                } else if(nivel==2){
+
+                    if((jogo[0][0]=="O")&&(jogo[0][1]=="O")&&(jogo[0][2]=="")){
+                        jogo[0][2]="O"
+                    }
+                    else if((jogo[0][1]=="O")&&(jogo[0][2]=="O")&&(jogo[0][0]=="")){
+                        jogo[0][0]="O"
+                    }
+                    else if((jogo[0][0]=="O")&&(jogo[0][2]=="O") && (jogo[0][1]=="")){
+                        jogo[0][1]="O"
+                    }
+                    else if((jogo[1][0]=="O")&&(jogo[1][1]=="O") && (jogo[1][2]=="")){
+                        jogo[1][2]="O"
+                    }
+                    else if((jogo[1][1]=="O")&&(jogo[1][2]=="O") && (jogo[1][0]=="")){
+                        jogo[1][0]="O"
+                    }
+                    else if((jogo[1][0]=="O")&&(jogo[1][2]=="O") && (jogo[1][1]=="")){
+                        jogo[1][1]="O"
+                    }
+                    else if((jogo[2][0]=="O")&&(jogo[2][1]=="O") && (jogo[2][2]=="")){
+                        jogo[2][2]="O"
+                    }
+                    else if((jogo[2][1]=="O")&&(jogo[2][2]=="O") && (jogo[2][0]=="")){
+                        jogo[2][0]="O"
+                    }
+                    else if((jogo[2][0]=="O")&&(jogo[2][2]=="O") && (jogo[2][1]=="")){
+                        jogo[2][1]="O"
+                    }
+                    else if((jogo[0][0]=="O")&&(jogo[1][0]=="O") && (jogo[2][0]=="")){
+                        jogo[2][0]="O"
+                    }
+                    else if((jogo[1][0]=="O")&&(jogo[2][0]=="O") && (jogo[0][0]=="")){
+                        jogo[0][0]="O"
+                    }
+                    else if((jogo[0][0]=="O")&&(jogo[2][0]=="O") && (jogo[1][0]=="")){
+                        jogo[1][0]="O"
+                    }else if((jogo[0][1]=="O")&&(jogo[1][1]=="O") && (jogo[2][1]=="")){
+                        jogo[2][1]="O"
+                    }else if((jogo[1][1]=="O")&&(jogo[2][1]=="O") && (jogo[0][1]=="")){
+                        jogo[0][0]="O"
+                    }else if((jogo[0][0]=="O")&&(jogo[2][0]=="O") && (jogo[1][0]=="")){
+                        jogo[0][1]="O"
+                    }else if((jogo[0][2]=="O")&&(jogo[1][2]=="O") && (jogo[2][2]=="")){
+                        jogo[2][2]="O"
+                    }else if((jogo[1][2]=="O")&&(jogo[2][2]=="O") && (jogo[0][2]=="")){
+                        jogo[0][2]="O"
+                    }else if((jogo[0][2]=="O")&&(jogo[2][2]=="O") && (jogo[1][2]=="")){
+                        jogo[1][2]="O"
+                    }else if((jogo[0][0]=="X")&&(jogo[0][1]=="X") && (jogo[0][2]=="")){
+                        jogo[0][2]="O"
+                    }else if((jogo[0][1]=="X")&&(jogo[0][2]=="X") && (jogo[0][0]=="")){
+                        jogo[0][0]="O"
+                    }else if((jogo[0][0]=="X")&&(jogo[0][2]=="X") && (jogo[0][1]=="")){
+                        jogo[0][1]="O"
+                    }else if((jogo[1][0]=="X")&&(jogo[1][1]=="X") && (jogo[1][2]=="")){
+                        jogo[1][2]="O"
+                    }else if((jogo[1][1]=="X")&&(jogo[1][2]=="X") && (jogo[1][0]=="")){
+                        jogo[1][0]="O"
+                    }else if((jogo[1][0]=="X")&&(jogo[1][2]=="X") && (jogo[1][1]=="")){
+                        jogo[1][1]="O"
+                    }else if((jogo[2][0]=="X")&&(jogo[2][1]=="X") && (jogo[2][2]=="")){
+                        jogo[2][2]="O"
+                    }else if((jogo[2][1]=="X")&&(jogo[2][2]=="X") && (jogo[2][0]=="")){
+                        jogo[2][0]="O"
+                    }else if((jogo[2][0]=="X")&&(jogo[2][2]=="X") && (jogo[2][1]=="")){
+                        jogo[2][1]="O"
+                    }else if((jogo[0][0]=="X")&&(jogo[1][0]=="X") && (jogo[2][0]=="")){
+                        jogo[2][0]="O"
+                    }else if((jogo[1][0]=="X")&&(jogo[2][0]=="X") && (jogo[0][0]=="")){
+                        jogo[0][0]="O"
+                    }else if((jogo[0][0]=="X")&&(jogo[2][0]=="X") && (jogo[1][0]=="")){
+                        jogo[1][0]="O"
+                    }else if((jogo[0][1]=="X")&&(jogo[1][1]=="X") && (jogo[2][1]=="")){
+                        jogo[2][1]="O"
+                    }else if((jogo[1][1]=="X")&&(jogo[2][1]=="X") && (jogo[0][1]=="")){
+                        jogo[0][0]="O"
+                    }else if((jogo[0][0]=="X")&&(jogo[2][0]=="X") && (jogo[1][0]=="")){
+                        jogo[0][1]="O"
+                    }else if((jogo[0][2]=="X")&&(jogo[1][2]=="X") && (jogo[2][2]=="")){
+                        jogo[2][2]="O"
+                    }else if((jogo[1][2]=="X")&&(jogo[2][2]=="X") && (jogo[0][2]=="")){
+                        jogo[0][2]="O"
+                    }else if((jogo[0][2]=="X")&&(jogo[2][2]=="X") && (jogo[1][2]=="")){
+                        jogo[1][2]="O"
+                    }else
+                    {do{
+                    l=Math.round(Math.random()*2)
+                    c=Math.round(Math.random()*2)}
+                    while(jogo[l][c]!="")
+                    jogo[l][c]="O"
+                }
+                verifica=verificaVitoria()
+                if(verifica!=""){
+                    alert(verifica + " venceu!")
+                    jogando=false
+                }
+                atualizaTabuleiro()
+                quemJoga=0
+            }
+        }
+    }
+
+        function atualizaTabuleiro()
+        {
+            for(var l=0;l<3;l++)
+            {
+                for(var c=0;c<3;c++)
+                {
+                    if (jogo[l][c]=="X")
+                    {
+                        tabuleiro[l][c].innerHTML="X"
+                        tabuleiro[l][c].style.cursor="default"
+                    }
+                     else if(jogo[l][c]=="O")
+                     {
+                        tabuleiro[l][c].innerHTML="O"
+                        tabuleiro[l][c].style.cursor="default"
+                    }
+                    else 
+                    {
+                        tabuleiro[l][c].innerHTML=""
+                        tabuleiro[l][c].style.cursor="pointer"
+                    }
+                }
+            }
+        }
+
+        function jogar(q){
+            if ((jogando==true) && (quemJoga==0)){
+                switch(q){
+                    case 1: if (jogo[0][0]==""){
+                        jogo[0][0]="X"
+                        quemJoga=1
+                    }
+                    break
+                    case 2: if (jogo[0][1]==""){
+                        jogo[0][1]="X"
+                        quemJoga=1
+                    }
+                    break
+                    case 3: if (jogo[0][2]==""){
+                        jogo[0][2]="X"
+                        quemJoga=1
+                    }
+                    break
+                    case 4: if (jogo[1][0]==""){
+                        jogo[1][0]="X"
+                        quemJoga=1
+                    }
+                    break
+                    case 5: if (jogo[1][1]==""){
+                        jogo[1][1]="X"
+                        quemJoga=1
+                    }
+                    break
+                    case 6: if (jogo[1][2]==""){
+                        jogo[1][2]="X"
+                        quemJoga=1
+                    }
+                    break
+                    case 7: if (jogo[2][0]==""){
+                        jogo[2][0]="X"
+                        quemJoga=1
+                    }
+                    break
+                    case 8: if (jogo[2][1]==""){
+                        jogo[2][1]="X"
+                        quemJoga=1
+                    }
+                    break
+                    case 9: if (jogo[2][2]==""){
+                        jogo[2][2]="X"
+                        quemJoga=1
+                    }
+                    break
+                }
+                if(quemJoga==1){
+                    atualizaTabuleiro();
+                    verifica=verificaVitoria()
+                if(verifica!=""){
+                    alert(verifica + " venceu!")
+                    jogando=false
+                }
+                cpuJoga()
+                }
+                
+            }
+        }
+
+        function inicia(){
+            jogo=[
+                ["","",""],
+                ["","",""],
+                ["","",""]
+            ]
+
+            tabuleiro=[
+            [document.getElementById("q1"),document.getElementById("q2"),document.getElementById("q3")],[document.getElementById("q4"),document.getElementById("q5"),document.getElementById("q6")],[document.getElementById("q7"),document.getElementById("q8"),document.getElementById("q9")]
+            ]
+
+            jogadaCpu=1
+            jogando=true
+            atualizaTabuleiro();
+            if(quemComeca==1){
+                quemComeca=0
+                quemJoga=0
+                document.getElementById("dvmenu").innerHTML='Quem começa: Jogador'
+            } else{
+                quemComeca=1
+                quemJoga=1
+                cpuJoga()
+                document.getElementById("dvmenu").innerHTML='Quem começa: CPU'
+
+            }
+        };
+
+        window.addEventListener("load",inicia);
+    </script>
+</body>
+</html>
