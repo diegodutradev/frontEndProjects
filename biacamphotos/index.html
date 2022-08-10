@@ -12,9 +12,13 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Press+Start+2P&display=swap');
 
-    body{
+    main {
       background-image: linear-gradient(to bottom, #D1C4BB, #D1C4BB, #D1C4BB, #fff);
+      font-family: 'Montserrat', sans-serif;
     }
+
+    
+
 
     .brbr {
       object-fit: cover;
@@ -63,6 +67,7 @@
       color: white;
       position: relative;
       bottom: 0px;
+      
     }
 
     .tam {
@@ -86,9 +91,9 @@
       padding: 3px;
     }
 
-    .pack {
-      margin-bottom: 25px;
-
+    .pac{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
     }
 
     .button {
@@ -96,52 +101,64 @@
       text-align: center;
     }
 
-    .justifica{
-      max-width:300px;
+    .justifica {
+      max-width: 295px;
       align-items: center;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
+      text-align: center;
       margin: auto;
       padding: 0px;
       border: 1px solid rgba(0, 0, 0, 0.245);
-      
+
     }
 
-    #cards{
+    #cards {
       display: flex;
       justify-content: center;
+
+    }
+
+    .ibagi {
+      height: 30px;
+      width: 30px;
+      margin-left: 25px;
+      
+
     }
   </style>
 </head>
 
 <body>
-  <nav id="topo" class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand titu" href="#">BIACAMPHOTOS</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Início</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#quemSou">Quem sou?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#pac">Pacotes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#cont">Contatos</a>
-          </li>
-        </ul>
+  <header>
+    <nav id="topo" class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand titu" href="https://www.instagram.com/biacamphotos/" target="_blank">BIACAMPHOTOS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#quemSou">Quem sou?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pac">Pacotes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cont">Contatos</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
 
   <div class="fundoCarousel">
@@ -239,7 +256,7 @@
 
       <div class="card justifica" style="max-width:300px">
         <img class="card-img-top" src="images/Cards/1.jpg" alt="Card image">
-        <div class="card-body">
+        <div class="card-body pac">
           <h4 class="card-title">Pacote Basic</h4>
           <p class="card-text">10 fotos - R$:150,00.</p>
           <a href="https://api.whatsapp.com/send/?phone=%2B5561994519723&text&type=phone_number&app_absent=0"
@@ -249,7 +266,7 @@
 
       <div class="card justifica" style="max-width:300px">
         <img class="card-img-top" src="images/Cards/2.jpg" alt="Card image">
-        <div class="card-body">
+        <div class="card-body pac">
           <h4 class="card-title">Pacote Middle</h4>
           <p class="card-text">20 fotos - R$:200,00.</p>
           <a href="https://api.whatsapp.com/send/?phone=%2B5561994519723&text&type=phone_number&app_absent=0"
@@ -259,7 +276,7 @@
 
       <div class="card justifica" style="max-width:300px">
         <img class="card-img-top" src="images/Cards/3.jpg" alt="Card image">
-        <div class="card-body">
+        <div class="card-body pac">
           <h4 class="card-title">Pacote Premium</h4>
           <p class="card-text">40 fotos - R$:300,00.</p>
           <a href="https://api.whatsapp.com/send/?phone=%2B5561994519723&text&type=phone_number&app_absent=0"
@@ -271,12 +288,13 @@
   </section>
 
   <h1 id="cont" class="pacotes">Contatos</h1>
-  
 
+      <footer class="foot">
+        <a href="https://wa.me/+5561994519723" target="_blank"><img src="footer1.png" alt="" class="ibagi"></a>
+        <a href="https://www.instagram.com/biacamphotos/" target="_blank"><img src="footer3.png" alt="" class="ibagi"></a>
+        <a href="https://www.instagram.com/bia_nasbatalhas/" target="_blank"><img src="footer3.png" alt="" class="ibagi"></a>
+      </footer>
 
-
-
-  </main>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
