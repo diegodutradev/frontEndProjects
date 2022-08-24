@@ -1,0 +1,52 @@
+--Arrow function: {
+    Melhor sintaxe da linguagem.
+    Reduz bastante a digitação porém a função declarada normalmente as vezes é mais intuitiva.
+    Normalmente ela é atribuida a uma variável.
+    Ótimo jeito de escrever funções anonimas.
+    É utilizado a sintaxe "=>" para se utilizar uma arrow function
+    Retorno da arrow function é implicito e isso resulta em um código mais enxuto e fácil de ler.
+}
+
+--Template strings{
+    Melhor forma de criar uma string junto com operações e variáveis sem precisar fechar e abrir as aspas todas as vezes.
+    É parecido com a sintaxe do python.
+    Invés de aspas simples ou aspas duplas é utilizado o ` ` para abrir uma template string.
+    Sempre que quiser passar uma variável dentro da template string é só utilizar $() e informar dentro dos parenteses as operações e variáveis que deseja utilizar
+    Sintaxe fica assim:{
+        let tempString = `5 + 15 é igual a $(5+15)`
+        }
+}
+
+--Parametros padrões{
+    Parametros padrões são dados que são exibidos quando não se é passado os parâmetros esperados em uma função.
+    Só basta atribuir um valor dentro dos parenteses que definem os Parametros e quando a função for chamada sem passar nenhum parametro ela sempre exibirá os parametros padrões que definimos anteriormente.
+    Mesmo se for passado como parametro "undefined" para a função, ela exibirá o valor dos parametros padrões, porém se você passar qualquer valor válido, este valor irá sobrepor o parametro padrão.
+}
+
+--Operador spread{
+    No contexto spread o operador spread tem a função de espalhar informações seja dentro de um array ou de um objeto.
+    Este operador é utilizado através dos ... antes de uma variável que contém os dados que deseja espalhar.
+    Ótima forma de juntar dois arrays um dentro do outro e formar um array grande apenas. Muito bom para se utilizar no mesmo contexto porém utilizando objetos invés de array.
+}
+
+--Operador rest{
+    O operador rest é utilizado para possibilitar serem passados uma quantidade indefinida de parametros na função.
+    Assim como o operador spread ele também é realizado com as reticencias.
+    Possibilita realização de calculos dinamicos com os valores atribuidos pelos parametros.
+    Todos os valores vão para dentro de um array.
+}
+
+--Destructuring assignment{
+    O operador Destructuring no contexto de array serve para separar e acessar itens de um array de maneira mais simples e eficaz.
+    O operador sempre será usado antes do operador = de atribuição. O operador usado é o mesmo de array porém com essa diferença de ser do lado esquerdo.
+    Consegue acessar matrizes facilmente utilizando a , para pular índices e acessar arrays dentro de outros arrays.
+    A ordem das variavéis que você declara importam pois irão ser atribuidas aos valores dos índices correspondentes. Primeira variável irá receber o índice 0, a segunda o índice 1 e etc...
+}
+
+--Destructuring assignment{
+    O operador Destructuring no contexto de objetos possibilita separar e acessar itens de um objeto de maneira mais simples e prática.
+    Para acessar um atributo do objeto basta passar dentro do operador { } as chaves dos valores que deseja obter dentro do seu objeto.
+    Também é possível atribuir valores padrão para evitar casos de undefined e também é possível renomear uma variável (algo que eu acho inútil e confuso mas vai saber né).
+    Também é possível utilizar dentro de funções.
+}
+
