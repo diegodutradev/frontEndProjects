@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family:"magnolia2" ;
+    src: url("Autography.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -162,5 +169,14 @@ color: #AB590E;
 .img1{
 
     max-height: 80px;
+
+}
+
+.fonte2{
+    font-family: "magnolia2";
+    font-size: 40px;
+}
+
+.cor-foot{
 
 }
