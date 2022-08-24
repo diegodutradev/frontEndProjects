@@ -177,6 +177,14 @@ color: #AB590E;
     font-size: 40px;
 }
 
-.cor-foot{
+.tamanho-fonte1{
+    font-size: 1.75rem;
+    color: rgba(0, 0, 0, 0.501);
 
+}
+
+.tamanho-fonte2{
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
 }
