@@ -316,11 +316,42 @@ color: #AB590E;
 
 .cor-texto{
 
-    color: rgba(0, 0, 0, 0.249);
+    color: rgba(0, 0, 0, 0.586);
+    font-size: 1.2rem;
 
 }
 
-.alinhar{
 
+#fut{
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cor-icone{
+    color: #AB590E;
+
+}
+
+.cor-icone:hover {
+    color: #F8B355;
+
+}
+
+.direita{
+
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-end;   
+
+}
+
+h2{
+
+    color: #260606bf;
+
+}
+
+#tamanho-foot{
+    width: 600px;
 
 }
