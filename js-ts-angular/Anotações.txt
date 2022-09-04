@@ -1,6 +1,6 @@
 --Arrow function: {
     Melhor sintaxe da linguagem.
-    Reduz bastante a digitação porém a função declarada normalmente as vezes é mais intuitiva.
+    Reduz bastante a digitação porém a fução declarada normalmente as vezes é mais intuitiva.
     Normalmente ela é atribuida a uma variável.
     Ótimo jeito de escrever funções anonimas.
     É utilizado a sintaxe "=>" para se utilizar uma arrow function
@@ -12,9 +12,7 @@
     É parecido com a sintaxe do python.
     Invés de aspas simples ou aspas duplas é utilizado o ` ` para abrir uma template string.
     Sempre que quiser passar uma variável dentro da template string é só utilizar $() e informar dentro dos parenteses as operações e variáveis que deseja utilizar
-    Sintaxe fica assim:{
-        let tempString = `5 + 15 é igual a $(5+15)`
-        }
+    Sintaxe fica assim let tempString = `5 + 15 é igual a $(5+15)`
 }
 
 --Parametros padrões{
@@ -40,13 +38,19 @@
     O operador Destructuring no contexto de array serve para separar e acessar itens de um array de maneira mais simples e eficaz.
     O operador sempre será usado antes do operador = de atribuição. O operador usado é o mesmo de array porém com essa diferença de ser do lado esquerdo.
     Consegue acessar matrizes facilmente utilizando a , para pular índices e acessar arrays dentro de outros arrays.
-    A ordem das variavéis que você declara importam pois irão ser atribuidas aos valores dos índices correspondentes. Primeira variável irá receber o índice 0, a segunda o índice 1 e etc...
 }
 
 --Destructuring assignment{
-    O operador Destructuring no contexto de objetos possibilita separar e acessar itens de um objeto de maneira mais simples e prática.
+    O operador Destructuring no contexto de objetos possibilita separar e acessar itens de um objeto de maneira mais simple e prática.
     Para acessar um atributo do objeto basta passar dentro do operador { } as chaves dos valores que deseja obter dentro do seu objeto.
     Também é possível atribuir valores padrão para evitar casos de undefined e também é possível renomear uma variável (algo que eu acho inútil e confuso mas vai saber né).
     Também é possível utilizar dentro de funções.
 }
 
+--Class{
+    O class é uma palavra reservada do JavaScript que disponibiliza uma sintaxe mais parecida com outras linguagens de programação facilitando o uso da orientação a objetos.
+}
+
+--Extends{
+    Com o extends é possivel utilizar o conceito de herança de um objeto para outro. O objeto filho herda as características do pai, sendo assim, é possível utilizar métodos que existiam no objeto pai pelo objeto filho. Para isso ser possível é necessário utilizar o método super dentro do construtor do objeto filho (é possível também passar parametros para o método super para não ficar a mercê de informações estáticas).
+}
