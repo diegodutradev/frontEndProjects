@@ -1,0 +1,37 @@
+@font-face {
+  font-family:"texto" ;
+  src: url("fonts/Poppins-Medium.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:"titulo" ;
+  src: url("fonts/Rubik-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+#main{
+  width: 500px;
+  box-shadow: 4px 4px 20px #888;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  font-family: 'titulo';
+  margin: auto;
+}
+
+#tamImg{
+  width: 250px;
+}
+
+.ibagi{
+ text-align: center;
+ 
+}
+
+.pad{
+  padding: 5px;
+}

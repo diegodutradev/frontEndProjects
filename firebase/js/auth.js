@@ -3,14 +3,24 @@ authForm.onsubmit = function (event) {
   event.preventDefault()
   if (authForm.submitAuthForm.innerHTML == 'Acessar') {
     showItem(loading)
-    firebase.auth().signInWithEmailAndPassword(authForm.email.value, authForm.password.value).catch(function (error) {
-      console.log('Falha no acesso')
-      console.log(error)
+    firebase.auth().signInWithEmailAndPassword(authForm.email.value, authForm.password.value).then(() => {
+      window.location.href = "redireciona.html"
+    }).catch(error => {
+      if(error.code === 'auth/wrong-password'){
+        console.log("xD")
+      } else if (error.code === 'auth/too-many-requests') {
+        console.log("Dx")
+      }
+      hideItem(loading)
+      console.log(error.message)
+      console.log(error.code)
     })
+    
   } else {
     firebase.auth().createUserWithEmailAndPassword(authForm.email.value, authForm.password.value).catch(function (error) {
       console.log('Falha no cadastro')
       console.log(error)
+      hideItem(loading)
     })
   }
 }

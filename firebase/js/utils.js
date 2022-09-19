@@ -47,3 +47,4 @@ function showAuth(){
   hideItem(userContent)
   showItem(auth)
 }
+

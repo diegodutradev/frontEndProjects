@@ -1,8 +1,22 @@
+@font-face {
+  font-family:"texto" ;
+  src: url("fonts/Poppins-Medium.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:"titulo" ;
+  src: url("fonts/Rubik-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   color: #444;
-  font-family: tahoma;
   display: flex;
   height: 96vh;
+  font-family: 'texto';
 }
 
 #app {
@@ -21,9 +35,12 @@ text-align: center;
   display: none;
 }
 
-h3 {
+h1 {
   margin: 4px;
   font-weight: normal;
+  font-family: 'titulo';
+  font-size: 1.35em;
+  font-weight: bold;
 }
 
 input {
@@ -70,3 +87,4 @@ p{
 .tamImg{
   width: 250px;
 }
+

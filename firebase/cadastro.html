@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FacilitaGov</title>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="main-container">
+
+    <div class="ibagi">
+      <img src="img/1.png" alt="" id="tamImg">
+    </div>
+    
+    <h1>
+      Cadastro FacilitaGov
+    </h1>
+    <form id="registerForm">
+      <div class="full">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" placeholder="Digite o seu email" data-min-length="3" data-required data-email-validate>
+      </div>
+      <div class="half">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite o seu nome completo" data-max-length="16" data-required data-only-letters>
+      </div>
+      <div class="half">
+        <label for="telefone">Telefone celular</label>
+        <input type="text" name="telefone" id="telefone" placeholder="Digite o telefone celular" data-required>
+      </div>
+      <div class="half">
+        <label for="nascimento">Data de nascimento</label>
+        <input type="text" name="nascimento" id="nascimento" placeholder="Digite a data de nascimento" data-required>
+      </div>
+      <div class="half">
+        <label for="cpf">CPF ou CNPJ</label>
+        <input type="text" name="cpf" id="cpf" placeholder="Digite o seu CPF ou CNPJ" data-required>
+      </div>
+      <div class="half">
+        <label for="uf">UF</label>
+        <input type="text" name="uf" id="uf" placeholder="Digite seu estado" data-required>
+      </div>
+      <div class="half">
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" id="cidade" placeholder="Digite a sua cidade" data-required>
+      </div>
+      <div class="half">
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" placeholder="Digite a sua senha" data-required>
+      </div>
+      <div class="half">
+        <label for="passwordConfirmation">Confirme a sua senha</label>
+        <input type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Confirme a sua senha" data-required data-equal="password">
+      </div>
+      <div class="full">
+        <input type="submit" id="btn-submit" value="Registrar">
+      </div>
+      <div class="voltar"><a href="redireciona.html">Voltar</a></div>
+      
+    </form>
+  </div>
+  <p class="error-validation template"></p>
+
+
+  <script src="js/cadastro.js"></script>
+
+  
+</body>
+</html>
